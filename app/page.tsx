@@ -1,12 +1,10 @@
-'use client';
-
+'use client';;
 import Link from 'next/link';
 import './page.module.css';
-import { getRemoteApi } from './services/api-service';
+import { StoreService } from './services/store-service';
 
 export default function Home() {
-  getRemoteApi('/api/hello')
-    .then(v => console.log(v));
+  const storeService = new StoreService();
 
   return (
     <div>
