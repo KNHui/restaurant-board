@@ -1,6 +1,6 @@
 import { Store } from "../../models/store";
 
-async function request<T>(url: string) {
+async function request(url: string): Promise<any> {
     try {
         const response = await fetch(
             url, {
@@ -10,6 +10,8 @@ async function request<T>(url: string) {
 
         if (response.ok) {
             const data = await response.json();
+
+            console.log('request done', data);
             return data;
         } else {
             const errData = await response.json();
@@ -25,8 +27,9 @@ export async function fetchStores(): Promise<Store[]> {
         const URL = 'http://localhost:9000/stores';
         const data = await request(URL);
 
-        console.log('fetchStores', data);
-        return data.map((store: JSON) => new Store(store));
+        return Array.isArray(data) ?
+            data.map((store: JSON) => new Store(store)) :
+            [];
     } catch (error) {
         console.error('fetchStores', error);
         throw error;
