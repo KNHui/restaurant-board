@@ -1,4 +1,4 @@
-import { Store } from "../models/store";
+import { Store } from "../../models/store";
 
 async function request<T>(url: string) {
     try {

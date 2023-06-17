@@ -1,4 +1,4 @@
-import { Store } from "../models/store";
+import { Store } from "../../models/store";
 import { fetchStores } from "./api-service";
 
 export class StoreService {

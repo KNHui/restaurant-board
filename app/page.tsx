@@ -1,7 +1,7 @@
 'use client';;
 import Link from 'next/link';
 import './page.module.css';
-import { StoreService } from './services/store-service';
+import { StoreService } from './server/services/store-service';
 
 export default function Home() {
   const storeService = new StoreService();
