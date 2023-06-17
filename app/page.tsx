@@ -1,10 +1,10 @@
-'use client'
+'use client';;
 import Link from 'next/link';
 import './page.module.css';
-import { useRouter } from 'next/navigation';
+import { StoreService } from './server/services/store-service';
 
 export default function Home() {
-  const router = useRouter();
+  const storeService = new StoreService();
 
   return (
     <div>
