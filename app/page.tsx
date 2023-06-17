@@ -1,10 +1,12 @@
-'use client'
+'use client';
+
 import Link from 'next/link';
 import './page.module.css';
-import { useRouter } from 'next/navigation';
+import { getRemoteApi } from './services/api-service';
 
 export default function Home() {
-  const router = useRouter();
+  getRemoteApi('/api/hello')
+    .then(v => console.log(v));
 
   return (
     <div>
