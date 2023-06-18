@@ -2,12 +2,20 @@
 import Link from 'next/link';
 import './page.module.css';
 import { StoreService } from './server/services/store-service';
+import BasicButtons from './components/buttons';
+import BasicButtonGroup from './components/button-group';
+import { Container } from '@mui/material';
 
 export default function Home() {
   const storeService = new StoreService();
+  const longString = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
 
   return (
-    <div>
+    <Container fixed>
+      <BasicButtons></BasicButtons>
+      <hr></hr>
+      <BasicButtonGroup></BasicButtonGroup>
+      <hr></hr>
       /page.tsx
       <ul>
         <li>
@@ -24,6 +32,7 @@ export default function Home() {
           <Link href="/sub/about">/sub/about</Link>
         </li>
       </ul>
-    </div>
+
+    </Container>
   )
 }
