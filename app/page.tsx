@@ -5,6 +5,7 @@ import { StoreService } from './server/services/store-service';
 import BasicButtons from './components/buttons';
 import BasicButtonGroup from './components/button-group';
 import { Container, Grid } from '@mui/material';
+import CustomizedDialogs from './components/form-dialog';
 
 export default function Home() {
   const storeService = new StoreService();
@@ -12,10 +13,10 @@ export default function Home() {
 
   return (
     <Container fixed>
-      <BasicButtons></BasicButtons>
-      <hr></hr>
-      <BasicButtonGroup></BasicButtonGroup>
-      <hr></hr>
+      <BasicButtons />
+      <hr />
+      <BasicButtonGroup />
+      <hr />
       <Grid container spacing={2}>
         <Grid item xs={4}>
           <ul style={{ border: '1px solid gray' }}>
@@ -40,6 +41,8 @@ export default function Home() {
           </p>
         </Grid>
       </Grid>
+      <hr />
+      <CustomizedDialogs />
     </Container>
   )
 }
