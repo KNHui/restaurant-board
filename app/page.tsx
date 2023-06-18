@@ -1,11 +1,13 @@
-'use client';;
+'use client';
+
+import Header from './components/header/header';
 import './page.module.css';
 import { Container } from '@mui/material';
 
 export default function Home() {
   return (
     <Container fixed>
-      <header>Main Header</header>
+      <Header />
       <div>
         <header>Sub Header</header>
         <main>
