@@ -1,8 +1,9 @@
 import { Box } from '@mui/material';
-import { LayoutHeightService } from "@/app/services/layout/layout-service";
+import { LayoutSizeService } from "@/app/services/layout/layout-size-service";
+import Subheader from '../subheader/subheader';
 
 export default function NestedLayout({
-    subTitle,
+    subTitle: subtitle,
     children
 }: {
     subTitle: string,
@@ -11,10 +12,11 @@ export default function NestedLayout({
     return (
         <Box
             component="div"
-            position={'relative'}
-            height={LayoutHeightService.getBodyHeight()}
+            position="relative"
+            paddingX={LayoutSizeService.getContainerPadding()}
+            height={LayoutSizeService.getBodyHeight()}
         >
-            <header>subTitle</header>
+            <Subheader subtitle={subtitle} height={LayoutSizeService.getSubheaderHeight()}></Subheader>
             <main>
                 {children}
             </main>

@@ -1,3 +1,4 @@
+import { LayoutSizeService } from "@/app/services/layout/layout-size-service";
 import { Box, Divider, Link, Typography } from "@mui/material";
 
 export default function Footer() {
@@ -8,13 +9,15 @@ export default function Footer() {
     return (
         <Box
             component="footer"
+            paddingX={LayoutSizeService.getContainerPadding()}
         >
-            <Divider variant="middle" />
+            <Divider />
             <Typography
                 variant="body2"
                 color="textSecondary"
                 align="left"
-                marginTop="4px"
+                marginTop="8px"
+                fontSize="12px"
             >
                 {copyright}{' '}
                 <Link

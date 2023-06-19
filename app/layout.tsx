@@ -5,7 +5,7 @@ import './globals.css';
 import styles from './page.module.css';
 import { Inter } from 'next/font/google';
 import Header from './components/header/header';
-import { LayoutHeightService } from './services/layout/layout-service';
+import { LayoutSizeService } from './services/layout/layout-size-service';
 import Footer from './components/footer/footer';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,9 +25,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Container
           className={styles.container}
-          style={{ height: LayoutHeightService.getContainerHeight() }}
+          style={{ height: LayoutSizeService.getContainerHeight() }}
         >
-          <Header height={LayoutHeightService.getHeaderHeight()} />
+          <Header height={LayoutSizeService.getHeaderHeight()} />
           {children}
           <Footer />
 

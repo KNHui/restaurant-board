@@ -2,12 +2,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Navbar } from './navbar';
 import { SectionHeight } from '@/app/models/section-height';
+import { Box } from '@mui/material';
 
 export default function Header(props: SectionHeight) {
-    const title = 'AWESOME FOOD STORE';
+    const TITLE = 'AWESOME FOOD STORE';
 
     return (
-        <header
+        <Box
+            component="header"
             style={{ height: props.height }}
         >
             <Toolbar
@@ -20,9 +22,9 @@ export default function Header(props: SectionHeight) {
                     component="div"
                     sx={{ flexGrow: 1, display: 'block', textAlign: 'right' }}
                 >
-                    {title}
+                    {TITLE}
                 </Typography>
             </Toolbar>
-        </header>
+        </Box>
     );
 }

@@ -1,1 +1,1 @@
-export type SectionHeight = { height: string };
+export interface SectionHeight { height: string };
