@@ -3,11 +3,9 @@ import Typography from '@mui/material/Typography';
 import { Navbar } from './header-navbar';
 import { SectionHeight } from '@/app/models/layout/section-height';
 import { Box } from '@mui/material';
-import { TitleService } from '@/app/services/title/title.service';
+import { MetadataService } from '@/app/services/metadata/metadata.service';
 
 export default function Header(props: SectionHeight) {
-    const TITLE = 'AWESOME FOOD STORE';
-
     return (
         <Box
             component="header"
@@ -20,10 +18,14 @@ export default function Header(props: SectionHeight) {
                 <Navbar />
                 <Typography
                     variant="h6"
-                    component="div"
-                    sx={{ flexGrow: 1, display: 'block', textAlign: 'right' }}
+                    component="h6"
+                    flexGrow="1"
+                    display="block"
+                    textAlign="right"
+                    fontWeight="bold"
+                    color="#464ea3"
                 >
-                    {TitleService.getTitle()}
+                    {MetadataService.getTitle()}
                 </Typography>
             </Toolbar>
         </Box>

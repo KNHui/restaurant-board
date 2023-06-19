@@ -1,5 +1,3 @@
-import { SectionHeight } from "../layout/section-height";
-
-export interface SubheaderProps extends SectionHeight {
+export interface SubheaderProps {
     subtitle: string;
 }

@@ -1,4 +1,5 @@
-import { LayoutSizeService } from "@/app/services/layout/layout-size-service";
+import { FontService } from "@/app/services/font/font.service";
+import { LayoutSizeService } from "@/app/services/layout/layout-size.service";
 import { Box, Divider, Link, Typography } from "@mui/material";
 
 export default function Footer() {
@@ -16,8 +17,8 @@ export default function Footer() {
                 variant="body2"
                 color="textSecondary"
                 align="left"
-                marginTop="8px"
-                fontSize="12px"
+                marginTop={FontService.getTextMarginTop()}
+                fontSize={FontService.getSmallFontSize()}
             >
                 {copyright}{' '}
                 <Link
