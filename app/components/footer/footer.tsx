@@ -8,11 +8,8 @@ export default function Footer() {
     return (
         <Box
             component="footer"
-            position="absolute"
-            bottom="8px"
-            width="100%"
         >
-            <Divider />
+            <Divider variant="middle" />
             <Typography
                 variant="body2"
                 color="textSecondary"
