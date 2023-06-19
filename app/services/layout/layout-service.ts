@@ -1,7 +1,7 @@
 const BODY_MARGIN = '8px';
 const HEADER_HEIGHT = '64px';
 
-export const LayoutService = {
+export const LayoutHeightService = {
     getContainerHeight(): string {
         return `calc(100% - (${BODY_MARGIN} * 2))`;
     },

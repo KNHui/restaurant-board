@@ -1,5 +1,12 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+"use client";
+
+import { Container } from '@mui/material';
+import './globals.css';
+import styles from './page.module.css';
+import { Inter } from 'next/font/google';
+import Header from './components/header/header';
+import { LayoutHeightService } from './services/layout/layout-service';
+import Footer from './components/footer/footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +22,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Container
+          className={styles.container}
+          style={{ height: LayoutHeightService.getContainerHeight() }}
+        >
+          <Header height={LayoutHeightService.getHeaderHeight()} />
+          {children}
+          <Footer />
+
+        </Container>
+      </body>
     </html>
   )
 }
