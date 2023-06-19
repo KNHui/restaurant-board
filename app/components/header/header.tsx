@@ -1,8 +1,9 @@
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Navbar } from './navbar';
-import { SectionHeight } from '@/app/models/section-height';
+import { Navbar } from './header-navbar';
+import { SectionHeight } from '@/app/models/layout/section-height';
 import { Box } from '@mui/material';
+import { TitleService } from '@/app/services/title/title.service';
 
 export default function Header(props: SectionHeight) {
     const TITLE = 'AWESOME FOOD STORE';
@@ -22,7 +23,7 @@ export default function Header(props: SectionHeight) {
                     component="div"
                     sx={{ flexGrow: 1, display: 'block', textAlign: 'right' }}
                 >
-                    {TITLE}
+                    {TitleService.getTitle()}
                 </Typography>
             </Toolbar>
         </Box>
