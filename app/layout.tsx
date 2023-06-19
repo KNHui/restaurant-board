@@ -21,8 +21,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html
+      lang="en"
+      style={{ height: LayoutSizeService.getHTMLHeight() }}
+    >
+      <body
+        className={inter.className}
+        style={{ height: LayoutSizeService.getBodyHeight() }}
+      >
         <Container
           className={styles.container}
           style={{ height: LayoutSizeService.getContainerHeight() }}
@@ -30,7 +36,6 @@ export default function RootLayout({
           <Header height={LayoutSizeService.getHeaderHeight()} />
           {children}
           <Footer />
-
         </Container>
       </body>
     </html>

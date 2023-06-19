@@ -4,6 +4,12 @@ const BODY_MARGIN = '8px';
 const FOOTER_HEIGHT = '32px';
 
 export const LayoutSizeService = {
+    getHTMLHeight(): string {
+        return `100%`;
+    },
+    getBodyHeight(): string {
+        return `calc(100% - ${HEADER_PADDING})`;
+    },
     getContainerHeight(): string {
         return `calc(100% - (${BODY_MARGIN} * 2))`;
     },
@@ -13,13 +19,10 @@ export const LayoutSizeService = {
     getSubheaderHeight(): string {
         return HEADER_HEIGHT;
     },
-    getBodyHeight(): string {
+    getNestedLayoutContentHeight(): string {
         return `calc(100% - ${HEADER_HEIGHT} - (${BODY_MARGIN} * 2) - ${FOOTER_HEIGHT})`;
     },
     getContainerPadding(): string {
         return HEADER_PADDING;
-    },
-    getSubHeaderWidth(): string {
-        return `calc(100% - (${HEADER_PADDING} * 2))`
     }
 };
