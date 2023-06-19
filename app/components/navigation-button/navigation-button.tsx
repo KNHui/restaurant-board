@@ -9,12 +9,10 @@ export function NavigationButton(props: NavigationButtonProps) {
         >
             <Button
                 variant="text"
-                key={props.key}
                 style={{ color: '#000' }}
-
             >
                 {props.text}
             </Button>
         </Link>
     );
-};
+}
