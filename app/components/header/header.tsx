@@ -1,13 +1,14 @@
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Navbar } from './navbar';
-import { SectionHeight } from '@/app/models/section-height';
+import { Navbar } from './header-navbar';
+import { SectionHeight } from '@/app/models/layout/section-height';
+import { Box } from '@mui/material';
+import { MetadataService } from '@/app/services/metadata/metadata.service';
 
 export default function Header(props: SectionHeight) {
-    const title = 'AWESOME FOOD STORE';
-
     return (
-        <header
+        <Box
+            component="header"
             style={{ height: props.height }}
         >
             <Toolbar
@@ -17,12 +18,16 @@ export default function Header(props: SectionHeight) {
                 <Navbar />
                 <Typography
                     variant="h6"
-                    component="div"
-                    sx={{ flexGrow: 1, display: 'block', textAlign: 'right' }}
+                    component="h6"
+                    flexGrow="1"
+                    display="block"
+                    textAlign="right"
+                    fontWeight="bold"
+                    color="#464ea3"
                 >
-                    {title}
+                    {MetadataService.getTitle()}
                 </Typography>
             </Toolbar>
-        </header>
+        </Box>
     );
 }
