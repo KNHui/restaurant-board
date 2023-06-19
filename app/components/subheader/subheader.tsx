@@ -1,11 +1,9 @@
-import { SubheaderProps } from "@/app/models/subheader-props";
+import { SubheaderProps } from "@/app/models/props/subheader-props";
 import { Box, Typography } from "@mui/material";
 import { SubheaderUnederline } from "./subheader-line";
 import { LayoutSizeService } from "@/app/services/layout/layout-size-service";
 
 export default function Subheader(props: SubheaderProps) {
-
-
     return (
         <Box
             component="header"
