@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Button from '@mui/material/Button';
-import { NavigationButtonProps } from '@/app/models/props/navigation-button-prps';
+import { NavigationButtonProps } from '@/app/models/props/navigation-button-props';
 
 export function NavigationButton(props: NavigationButtonProps) {
     return (

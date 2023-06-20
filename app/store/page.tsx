@@ -3,10 +3,11 @@ import { Box, CircularProgress, Grid, Typography } from "@mui/material";
 import NestedLayout from "../components/layout/nested-layout";
 import { useEffect, useRef, useState } from "react";
 import { Store } from "../models/store/store";
-import { MetadataService } from "../services/metadata/metadata.service";
 import { StoreService } from "../services/server/store.service";
+import StoreItem from "./item";
 
 export default function StorePage() {
+    const subtitle = 'STORE';
     const [stores, setStores] = useState<Store[]>([]);
     const mounted = useRef(false);
 
@@ -19,7 +20,7 @@ export default function StorePage() {
         }
     }, []);
     return (
-        <NestedLayout subtitle="STORE" alignContentCenter={true}>
+        <NestedLayout subtitle={subtitle} alignContentCenter={true}>
             <Box
                 component="div"
                 width="1024px"
@@ -29,11 +30,11 @@ export default function StorePage() {
                 justifyContent="center"
                 flexDirection="column"
             >
-                <Typography component="h4"
+                <Typography
+                    component="h4"
                     variant="h4"
-                    color="#464ea3"
                 >
-                    {MetadataService.getTitle()}
+                    {subtitle}
                 </Typography>
                 {
                     mounted.current ?
@@ -49,20 +50,11 @@ export default function StorePage() {
                                         key={`store-item-${store.id}`}
                                         xs={12 / 5}
                                     >
-                                        <Box
-                                            component="img"
-                                            height="180px"
-                                            width="180px"
-                                            src={store.image}
-                                        >
-
-                                        </Box>
+                                        <StoreItem store={store} />
                                     </Grid>)
                             }
-                            <Grid item xs={4}>
-                            </Grid>
-                        </Grid>
-                        : <CircularProgress
+                        </Grid> :
+                        <CircularProgress
                             color="inherit"
                             sx={{ margin: "10vh auto" }}
                         />

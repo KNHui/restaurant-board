@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { NavigationButton } from "../navigation-button/navigation-button";
-import { NavigationButtonProps } from "@/app/models/props/navigation-button-prps";
+import { NavigationButtonProps } from "@/app/models/props/navigation-button-props";
 
 export function Navbar() {
     const navItems: NavigationButtonProps[] = [
