@@ -5,8 +5,6 @@ import { BootstrapDialogTitleProps } from "@/app/models/props/dialog-title-props
 export function BootstrapDialogTitle(props: BootstrapDialogTitleProps) {
     const { children, onClose, ...other } = props;
 
-    console.log(other);
-
     return (
         <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
             {children}

@@ -11,13 +11,15 @@ async function request(url: string): Promise<any> {
         if (response.ok) {
             const data = await response.json();
 
-            console.log('request done', data);
+            console.info('request done');
+            console.table(data);
             return data;
         } else {
             const errData = await response.json();
             throw errData;
         }
     } catch (error) {
+        console.error('request fail', error);
         throw error;
     }
 }
