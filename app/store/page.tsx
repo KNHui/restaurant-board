@@ -12,12 +12,12 @@ export default function StorePage() {
     const mounted = useRef(false);
 
     useEffect(() => {
-        if (!mounted.current) {
-            mounted.current = true;
+        !mounted.current &&
             StoreService
                 .getStores()
-                .then((value) => setStores(value));
-        }
+                .then((value) => setStores(value))
+                .catch(() => setStores([]))
+                .finally(() => mounted.current = true);
     }, []);
     return (
         <NestedLayout subtitle={subtitle} alignContentCenter={true}>
@@ -38,22 +38,25 @@ export default function StorePage() {
                 </Typography>
                 {
                     mounted.current ?
-                        <Grid
-                            container
-                            spacing={2}
-                            sx={{ marginY: "8px " }}
-                        >
-                            {
-                                stores.map(store =>
-                                    <Grid
-                                        item
-                                        key={`store-item-${store.id}`}
-                                        xs={12 / 5}
-                                    >
-                                        <StoreItem store={store} />
-                                    </Grid>)
-                            }
-                        </Grid> :
+                        stores.length > 0 ?
+                            <Grid
+                                container
+                                spacing={2}
+                                sx={{ marginY: "8px " }}
+                            >
+                                {
+                                    stores.map(store =>
+                                        <Grid
+                                            item
+                                            key={`store-item-${store.id}`}
+                                            xs={12 / 5}
+                                        >
+                                            <StoreItem store={store} />
+                                        </Grid>)
+                                }
+                            </Grid> :
+                            <Typography>There is no store.</Typography>
+                        :
                         <CircularProgress
                             color="inherit"
                             sx={{ margin: "10vh auto" }}
