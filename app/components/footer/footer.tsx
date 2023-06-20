@@ -1,16 +1,16 @@
 import { FontService } from "@/app/services/font/font.service";
-import { LayoutSizeService } from "@/app/services/layout/layout-size.service";
+import { LayoutStyleService } from "@/app/services/layout/layout-size.service";
 import { Box, Divider, Link, Typography } from "@mui/material";
 
 export default function Footer() {
     const copyright = '@ 2020';
     const name = '김남희';
-    const resumeLink = "https://www.notion.so/c546f5b61d554b2f9a6e56d840a90c5a?pvs=4";
+    const resumeLink = 'https://accessible-sunstone-63e.notion.site/c546f5b61d554b2f9a6e56d840a90c5a?pvs=4';
 
     return (
         <Box
             component="footer"
-            paddingX={LayoutSizeService.getContainerPadding()}
+            style={LayoutStyleService.getFooterStyle()}
         >
             <Divider />
             <Typography
@@ -22,7 +22,9 @@ export default function Footer() {
             >
                 {copyright}{' '}
                 <Link
-                    target="blank"
+                    target="_blank"
+                    // rel="noopener" prevents the new page from being able to access the window.opener property and ensures it runs in a separate process.
+                    rel="noopener"
                     color="inherit"
                     href={resumeLink}
                 >

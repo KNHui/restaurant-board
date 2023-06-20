@@ -1,4 +1,4 @@
-import { Store } from "../../models/eat/store";
+import { Store } from "../../models/store/store";
 
 async function request(url: string): Promise<any> {
     try {

@@ -4,21 +4,18 @@ import NestedLayout from "../components/layout/nested-layout";
 import { MetadataService } from "../services/metadata/metadata.service";
 import { FontService } from "../services/font/font.service";
 
-export default function About() {
+export default function AboutPage() {
     return (
-        <NestedLayout subTitle="ABOUT" >
+        <NestedLayout subtitle="ABOUT" alignContentCenter={true}>
             <Box
                 component="div"
-                textAlign="center"
-                display="flex"
-                justifyContent="center"
-                flexDirection="column"
                 height="100%"
+                textAlign="center"
             >
                 <Typography
                     component="h4"
                     variant="h4"
-                    color="#464ea3"
+                    fontWeight="bold"
                 >
                     {MetadataService.getTitle()}
                 </Typography>

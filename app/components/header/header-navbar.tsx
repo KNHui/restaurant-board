@@ -1,15 +1,15 @@
 import { Box } from "@mui/material";
 import { NavigationButton } from "../navigation-button/navigation-button";
-import { NavigationButtonProps } from "@/app/models/props/navigation-button-prps";
+import { NavigationButtonProps } from "@/app/models/props/navigation-button-props";
 
 export function Navbar() {
     const navItems: NavigationButtonProps[] = [
         { key: 'About', href: '/about', text: 'About' },
-        { key: 'Store', href: '/eat', text: 'Store' }
+        { key: 'Store', href: '/store', text: 'Store' }
     ];
 
     return (
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box sx={{ display: 'block' }}>
             {navItems.map(
                 (item) =>
                     <NavigationButton

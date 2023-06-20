@@ -1,7 +1,7 @@
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Navbar } from './header-navbar';
-import { SectionHeight } from '@/app/models/layout/section-height';
+import { SectionHeight } from '@/app/models/layout/section-height.model';
 import { Box } from '@mui/material';
 import { MetadataService } from '@/app/services/metadata/metadata.service';
 
@@ -9,7 +9,7 @@ export default function Header(props: SectionHeight) {
     return (
         <Box
             component="header"
-            style={{ height: props.height }}
+            height={props.height}
         >
             <Toolbar
                 component="nav"

@@ -5,7 +5,7 @@ import './globals.css';
 import styles from './page.module.css';
 import { Inter } from 'next/font/google';
 import Header from './components/header/header';
-import { LayoutSizeService } from './services/layout/layout-size.service';
+import { LayoutStyleService } from './services/layout/layout-size.service';
 import Footer from './components/footer/footer';
 import { MetadataService } from './services/metadata/metadata.service';
 
@@ -22,19 +22,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      style={{ height: LayoutSizeService.getHTMLHeight() }}
-    >
+    <html lang="en">
       <body
         className={inter.className}
-        style={{ height: LayoutSizeService.getBodyHeight() }}
+        style={LayoutStyleService.getBodyStyle()}
       >
         <Container
+          maxWidth={false}
           className={styles.container}
-          style={{ height: LayoutSizeService.getContainerHeight() }}
+          style={LayoutStyleService.getContainerStyle()}
         >
-          <Header height={LayoutSizeService.getHeaderHeight()} />
+          <Header height={LayoutStyleService.getHeaderHeight()} />
           {children}
           <Footer />
         </Container>

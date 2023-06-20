@@ -1,6 +1,6 @@
-import Eat from "./eat/page";
+import StorePage from "./store/page";
 
 export default function Home() {
 
-  return (<Eat />);
+  return (<StorePage />);
 }

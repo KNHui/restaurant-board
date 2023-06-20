@@ -1,40 +1,27 @@
-const HEADER_HEIGHT = '64px';
-const HEADER_PADDING = '24px';
-const SUBHEADER_HEIGHT = '64px';
-const SUBHEADER_PADDING = '8px';
-const SUBHEADER_MARGIN = '8px';
-const BODY_MARGIN = '8px';
-const CONTAINER_PADDING = '24px';
+import { BODY_MARGIN, CONTAINER_PADDING, FOOTER_HEIGHT, HEADER_HEIGHT, MainLayout } from '@/app/models/layout/layout.model';
+import { CSSProperties } from 'react';
 
-export const LayoutSizeService = {
-    getHTMLHeight(): string {
-        return `100%`;
-    },
-    getBodyHeight(): string {
-        return `calc(100% - ${HEADER_PADDING})`;
-    },
-    getContainerHeight(): string {
-        return `calc(100% - (${BODY_MARGIN} * 2))`;
-    },
+export const LayoutStyleService = <MainLayout>{
     getHeaderHeight(): string {
         return HEADER_HEIGHT;
     },
-    getSubheaderHeight(): string {
-        return SUBHEADER_HEIGHT;
+    getBodyStyle(): CSSProperties {
+        return {
+            height: '1px',
+            minHeight: `calc(100% - (${BODY_MARGIN} * 2))`
+        };
     },
-    getNestedLayoutHeight(): string {
-        return `calc(100% - ${SUBHEADER_HEIGHT})`;
+    getContainerStyle(): CSSProperties {
+        return {
+            height: '1px',
+            minHeight: `calc(100% - (${BODY_MARGIN} * 2) - ${FOOTER_HEIGHT})`,
+        };
     },
-    getNestedLayoutContentHeight(): string {
-        return `calc(100% - ${SUBHEADER_HEIGHT} - (${BODY_MARGIN} * 2))`;
-    },
-    getsubheaderPaddingBottom(): string {
-        return SUBHEADER_PADDING;
-    },
-    getsubheaderMarginBottom(): string {
-        return SUBHEADER_MARGIN;
-    },
-    getContainerPadding(): string {
-        return CONTAINER_PADDING;
+    getFooterStyle(): CSSProperties {
+        return {
+            position: 'relative',
+            paddingLeft: CONTAINER_PADDING,
+            paddingRight: CONTAINER_PADDING
+        }
     }
 };

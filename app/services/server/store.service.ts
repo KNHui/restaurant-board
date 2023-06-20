@@ -1,4 +1,4 @@
-import { Store } from "../../models/eat/store";
+import { Store } from "../../models/store/store";
 import { fetchStores } from "./api.service";
 
 let stores: Store[];
