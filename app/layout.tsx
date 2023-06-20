@@ -22,17 +22,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      style={{ height: LayoutSizeService.getHTMLHeight() }}
-    >
+    <html lang="en">
       <body
         className={inter.className}
-        style={{ height: LayoutSizeService.getBodyHeight() }}
+        style={LayoutSizeService.getBodyStyle()}
       >
         <Container
+          maxWidth={false}
           className={styles.container}
-          style={{ height: LayoutSizeService.getContainerHeight() }}
+          style={LayoutSizeService.getContainerStyle()}
         >
           <Header height={LayoutSizeService.getHeaderHeight()} />
           {children}

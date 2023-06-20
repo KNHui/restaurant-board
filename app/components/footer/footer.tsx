@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <Box
             component="footer"
-            paddingX={LayoutSizeService.getContainerPadding()}
+            style={LayoutSizeService.getFooterStyle()}
         >
             <Divider />
             <Typography

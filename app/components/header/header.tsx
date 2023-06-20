@@ -9,7 +9,7 @@ export default function Header(props: SectionHeight) {
     return (
         <Box
             component="header"
-            style={{ height: props.height }}
+            height={props.height}
         >
             <Toolbar
                 component="nav"

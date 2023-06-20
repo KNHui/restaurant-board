@@ -6,14 +6,11 @@ import { FontService } from "../services/font/font.service";
 
 export default function About() {
     return (
-        <NestedLayout subTitle="ABOUT" >
+        <NestedLayout subtitle="ABOUT" alignContentCenter={true}>
             <Box
                 component="div"
-                textAlign="center"
-                display="flex"
-                justifyContent="center"
-                flexDirection="column"
                 height="100%"
+                textAlign="center"
             >
                 <Typography
                     component="h4"

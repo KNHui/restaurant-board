@@ -3,7 +3,7 @@ const description = 'This is a Restaurant Directory Board Project and Next.js pr
 
 export const MetadataService = {
     getTitle: (
-        subTitle?: string
-    ) => typeof subTitle === 'string' ? `${title} | ${subTitle}` : title,
+        subtitle?: string
+    ) => typeof subtitle === 'string' ? `${title} | ${subtitle}` : title,
     getDescription: () => description,
 };
