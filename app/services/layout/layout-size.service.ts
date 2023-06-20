@@ -1,7 +1,7 @@
-import { BODY_MARGIN, CONTAINER_PADDING, FOOTER_HEIGHT, HEADER_HEIGHT } from '@/app/models/layout/layout';
+import { BODY_MARGIN, CONTAINER_PADDING, FOOTER_HEIGHT, HEADER_HEIGHT, MainLayout } from '@/app/models/layout/layout.model';
 import { CSSProperties } from 'react';
 
-export const LayoutSizeService = {
+export const LayoutStyleService = <MainLayout>{
     getHeaderHeight(): string {
         return HEADER_HEIGHT;
     },

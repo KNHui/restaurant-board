@@ -1,11 +1,8 @@
-import { BODY_MARGIN, CONTAINER_PADDING, FOOTER_HEIGHT } from '@/app/models/layout/layout';
-import { SUBHEADER_HEIGHT, SUBHEADER_MARGIN, SUBHEADER_PADDING } from '@/app/models/layout/nested-layout';
+import { CONTAINER_PADDING, FOOTER_HEIGHT } from '@/app/models/layout/layout.model';
+import { NestedLayoutSize, SUBHEADER_HEIGHT, SUBHEADER_MARGIN, SUBHEADER_PADDING } from '@/app/models/layout/nested-layout.model';
 import { CSSProperties } from 'react';
 
-export const NestedLayoutSizeService = {
-    getSubheaderHeight(): string {
-        return SUBHEADER_HEIGHT;
-    },
+export const NestedLayoutSizeService = <NestedLayoutSize>{
     getNestedLayoutStyle(): CSSProperties {
         return {
             position: 'relative',
@@ -14,12 +11,6 @@ export const NestedLayoutSizeService = {
             paddingLeft: CONTAINER_PADDING,
             paddingRight: CONTAINER_PADDING
         }
-    },
-    getNestedLayoutContentStyle(): CSSProperties {
-        return {
-            position: 'relative',
-            height: `calc(100% - ${SUBHEADER_HEIGHT} - (${BODY_MARGIN} * 2))`
-        };
     },
     getSubheaderPaddingBottom(): string {
         return SUBHEADER_PADDING;

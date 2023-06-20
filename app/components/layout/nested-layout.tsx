@@ -10,7 +10,7 @@ export default function NestedLayout({ subtitle, alignContentCenter, children }:
             component="div"
             display="flex"
             flexDirection="column"
-            style={NestedLayoutStyleService.getParentStyle()}
+            style={NestedLayoutStyleService.getBodyStyle()}
         >
             <Box component="title">
                 {MetadataService.getTitle(subtitle)}

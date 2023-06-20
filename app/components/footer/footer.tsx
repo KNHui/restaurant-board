@@ -1,5 +1,5 @@
 import { FontService } from "@/app/services/font/font.service";
-import { LayoutSizeService } from "@/app/services/layout/layout-size.service";
+import { LayoutStyleService } from "@/app/services/layout/layout-size.service";
 import { Box, Divider, Link, Typography } from "@mui/material";
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <Box
             component="footer"
-            style={LayoutSizeService.getFooterStyle()}
+            style={LayoutStyleService.getFooterStyle()}
         >
             <Divider />
             <Typography
