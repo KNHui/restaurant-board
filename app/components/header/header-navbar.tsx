@@ -9,7 +9,7 @@ export function Navbar() {
     ];
 
     return (
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box sx={{ display: 'block' }}>
             {navItems.map(
                 (item) =>
                     <NavigationButton

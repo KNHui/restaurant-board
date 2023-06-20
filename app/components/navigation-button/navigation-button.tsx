@@ -4,15 +4,12 @@ import { NavigationButtonProps } from '@/app/models/props/navigation-button-prop
 
 export function NavigationButton(props: NavigationButtonProps) {
     return (
-        <Link
-            href={props.href}
-        >
+        <Link href={props.href}>
             <Button
                 variant="text"
                 style={{ color: '#000' }}
             >
                 {props.text}
             </Button>
-        </Link>
-    );
+        </Link>);
 }
