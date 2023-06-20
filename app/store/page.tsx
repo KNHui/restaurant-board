@@ -2,10 +2,10 @@
 
 import NestedLayout from "../components/layout/nested-layout";
 
-export default function Eat() {
+export default function Store() {
     return (
-        <NestedLayout subTitle="EAT" >
-            /app/eat/page.tsx
+        <NestedLayout subTitle="STORE" >
+            /app/store/page.tsx
         </NestedLayout>
     );
 }

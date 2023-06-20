@@ -5,7 +5,7 @@ import { NavigationButtonProps } from "@/app/models/props/navigation-button-prps
 export function Navbar() {
     const navItems: NavigationButtonProps[] = [
         { key: 'About', href: '/about', text: 'About' },
-        { key: 'Store', href: '/eat', text: 'Store' }
+        { key: 'Store', href: '/store', text: 'Store' }
     ];
 
     return (
