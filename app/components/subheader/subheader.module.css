@@ -1,0 +1,14 @@
+.subheader-underline-container {
+    display: flex;
+    height: 0.4rem;
+
+    .subheader-underline-0,
+    .subheader-underline-2 {
+        background-color: #464ea3;
+        flex: 1;
+    }
+
+    .subheader-underline-1 {
+        width: 0.75rem;
+    }
+}
